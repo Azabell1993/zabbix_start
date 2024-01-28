@@ -1,0 +1,13 @@
+ubuntu@host-172-20-14-74:~$ sudo tail -f /var/log/zabbix-server/zabbix_server.log
+ 91505:20240127:094401.015 VMware monitoring:         YES
+ 91505:20240127:094401.015 SMTP authentication:       YES
+ 91505:20240127:094401.015 ODBC:                      YES
+ 91505:20240127:094401.015 SSH support:               YES
+ 91505:20240127:094401.015 IPv6 support:              YES
+ 91505:20240127:094401.015 TLS support:               YES
+ 91505:20240127:094401.015 ******************************
+ 91505:20240127:094401.016 using configuration file: /etc/zabbix/zabbix_server.conf
+ 91505:20240127:094401.017 [Z3001] connection to database 'zabbix' failed: [1045] Access denied for user 'zabbix'@'localhost' (using password: NO)
+ 91505:20240127:094401.017 database is down: reconnecting in 10 seconds
+ 91505:20240127:094411.017 [Z3001] connection to database 'zabbix' failed: [1045] Access denied for user 'zabbix'@'localhost' (using password: NO)
+ 91505:20240127:094411.017 database is down: reconnecting in 10 seconds

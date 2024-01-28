@@ -1,0 +1,1041 @@
+ubuntu@host-172-20-14-74:~/zabbix-6.4.10$ sudo ./configure --prefix=/home/zabbix/server --enable-server --enable-agent --with-mysql --enable-ipv6 --with-net-snmp --with-libcurl
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... no
+checking whether make supports nested variables... no
+checking how to create a pax tar archive... gnutar
+configure: Configuring Zabbix 6.4.10
+checking whether make sets $(MAKE)... (cached) no
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking for cc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether cc accepts -g... yes
+checking for cc option to enable C11 features... none needed
+checking whether cc understands -c and -o together... yes
+checking whether make supports the include directive... no
+checking dependency style of cc... none
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for netdb.h... yes
+checking for signal.h... yes
+checking for syslog.h... yes
+checking for time.h... yes
+checking for errno.h... yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for netinet/in.h... yes
+checking for math.h... yes
+checking for sys/socket.h... yes
+checking for dirent.h... yes
+checking for ctype.h... yes
+checking for mtent.h... no
+checking for fcntl.h... yes
+checking for sys/param.h... yes
+checking for arpa/inet.h... yes
+checking for sys/vfs.h... yes
+checking for sys/pstat.h... no
+checking for sys/sysinfo.h... yes
+checking for sys/statvfs.h... yes
+checking for sys/statfs.h... yes
+checking for sys/socket.h... (cached) yes
+checking for sys/loadavg.h... no
+checking for arpa/inet.h... (cached) yes
+checking for sys/vmmeter.h... no
+checking for strings.h... (cached) yes
+checking for vm/vm_param.h... no
+checking for sys/time.h... yes
+checking for kstat.h... no
+checking for sys/syscall.h... yes
+checking for sys/sysmacros.h... yes
+checking for stdint.h... (cached) yes
+checking for mach/host_info.h... no
+checking for mach/mach_host.h... no
+checking for knlist.h... no
+checking for pwd.h... yes
+checking for sys/var.h... no
+checking for arpa/nameser.h... yes
+checking for assert.h... yes
+checking for sys/dkstat.h... no
+checking for sys/disk.h... no
+checking for sys/sched.h... no
+checking for zone.h... no
+checking for nlist.h... no
+checking for kvm.h... no
+checking for linux/kernel.h... yes
+checking for procinfo.h... no
+checking for sys/dk.h... no
+checking for sys/resource.h... yes
+checking for pthread.h... yes
+checking for windows.h... no
+checking for process.h... no
+checking for conio.h... no
+checking for sys/wait.h... yes
+checking for stdarg.h... yes
+checking for winsock2.h... no
+checking for pdh.h... no
+checking for psapi.h... no
+checking for sys/sem.h... yes
+checking for sys/ipc.h... yes
+checking for sys/shm.h... yes
+checking for Winldap.h... no
+checking for Winber.h... no
+checking for lber.h... no
+checking for ws2tcpip.h... no
+checking for inttypes.h... (cached) yes
+checking for sys/file.h... yes
+checking for grp.h... yes
+checking for execinfo.h... yes
+checking for sys/systemcfg.h... no
+checking for sys/mnttab.h... no
+checking for mntent.h... yes
+checking for sys/times.h... yes
+checking for dlfcn.h... yes
+checking for sys/utsname.h... yes
+checking for sys/un.h... yes
+checking for sys/protosw.h... no
+checking for stddef.h... yes
+checking for limits.h... yes
+checking for float.h... yes
+checking for resolv.h... yes
+checking for net/if.h... yes
+checking for net/if_mib.h... no
+checking whether compiler supports -Werror=cpp... yes
+checking for sys/mount.h... yes
+checking for sys/proc.h... no
+checking for sys/sysctl.h... no
+checking for sys/user.h... yes
+checking for sys/swap.h... yes
+checking for sys/ucontext.h... yes
+checking for devstat.h... no
+checking for linux/netlink.h... yes
+checking for linux/inet_diag.h... yes
+checking for libperfstat.h... no
+checking for library containing socket... none required
+checking for library containing kstat_open... no
+checking for library containing gethostbyname... none required
+checking for library containing clock_gettime... none required
+checking for library containing dlopen... none required
+checking for library containing perfstat_memory_total... no
+checking for library containing devstat_getdevs... no
+checking for library containing getdevs... no
+checking for library containing backtrace_symbols... none required
+checking for library containing jail_getname... no
+checking for main in -lm... yes
+checking for main in -lkvm... no
+checking for main in -lpthread... yes
+checking for DNS lookup functions... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for an ANSI C-conforming const... yes
+checking for pid_t... yes
+checking for socklen_t... yes
+checking for actual socklen_t parameter type in socket functions... socklen_t
+checking for integer field name in union sigval of struct siginfo_t... sival_int
+checking for res_ninit... yes
+checking for res_ndestroy... no
+checking for _res._u._ext.nsaddrs... yes
+checking for _res._u._ext.ext... no
+checking for _res._ext.ext.nsaddrs... no
+checking for struct sockaddr_in6.sin6_len... no
+checking for union semun... no
+checking for struct swaptable in sys/swap.h... no
+checking for struct sensordev in sys/sensors.h... no
+checking for struct statvfs64 in sys/statvfs.h... no
+checking for struct statfs64 in sys/statfs.h... no
+checking for field ss_family in struct sockaddr_storage... yes
+checking for field mem_unit in struct sysinfo... yes
+checking for field freeswap in struct sysinfo... yes
+checking for field totalswap in struct sysinfo... yes
+checking for field totalram in struct sysinfo... yes
+checking for field sharedram in struct sysinfo... yes
+checking for field bufferram in struct sysinfo... yes
+checking for field freeram in struct sysinfo... yes
+checking for field uptime in struct sysinfo... yes
+checking for field procs in struct sysinfo... yes
+checking for field tm_gmtoff in struct tm... yes
+checking for linker options --start-group/--end-group... yes
+checking for '__thread' compiler support... yes
+checking for field updates in struct vminfo_t... no
+checking for function sysconf() in unistd.h... yes
+checking for function initgroups()... yes
+checking for functions seteuid() and setegid()... yes
+checking for function setproctitle()... no
+checking for function sysctlbyname()... no
+checking for function sysctl (KERN_BOOTTIME)... no
+checking for function sysctl (HW_NCPU)... no
+checking for function sysctl (KERN_MAXFILES)... no
+checking for function sysctl (KERN_MAXPROC)... no
+checking for function sysctl (KERN_CPTIME,KERN_CPTIME2)... no
+checking for function clock_gettime in time.h... yes
+checking for macro __va_copy() in stdarg.h... yes
+checking for macro __VA_ARGS__... yes
+checking for getloadavg... yes
+checking for hstrerror... yes
+checking for getenv... yes
+checking for putenv... yes
+checking for setenv... yes
+checking for tzset... yes
+checking for unsetenv... yes
+checking for sigqueue... yes
+checking for round... yes
+checking for /proc filesystem... yes
+checking for file /proc/stat... yes
+checking for file /proc/cpuinfo... yes
+checking for file /proc/0/psinfo... no
+checking for file /proc/loadavg... yes
+checking for file /proc/net/dev... yes
+checking for long long format... no
+checking for -rdynamic linking option... yes
+checking for libperfstat 5.2.0.40 fileset... no
+checking for libperfstat 5.3.0.60 fileset... no
+checking for architecture... linux (linux-gnu)
+checking for the linux kernel version... unknown family (5.15.0-86-generic)
+checking size of void *... 8
+checking for mysql_config... /usr/bin/mysql_config
+checking for main in -lmysqlclient... yes
+checking for main in -lzstd... yes
+checking for main in -lssl... yes
+checking for main in -lcrypto... yes
+checking for main in -lresolv... yes
+checking for main in -lm... (cached) yes
+checking for TLS support in MySQL library... yes
+checking for TLS ciphersuites in MySQL library... yes
+checking for MariaDB init options function... no
+checking for MySQL init options function... yes
+checking for Oracle support... no
+checking for Zabbix server/proxy database selection... ok
+checking for multirow insert statements... yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for net-snmp-config... /usr/bin/net-snmp-config
+checking version of netsnmp library... yes
+checking for main in -lnetsnmp... yes
+checking for strong SHA auth protocol support... yes
+checking for strong AES privacy protocol support... yes
+checking for localname in struct snmp_session... yes
+yes
+checking for zlib support... yes
+checking for pthread.h... (cached) yes
+checking for process shared libpthread support... yes
+checking for libevent support... yes
+checking for gawk... (cached) gawk
+checking for curl-config... /usr/bin/curl-config
+checking for the version of libcurl... 7.81.0
+checking for libcurl >= version 7.13.1... yes
+checking for main in -lcurl... yes
+checking whether libcurl is usable... yes
+checking for curl_free... yes
+checking for curl_easy_escape... yes
+configure: using old pcre library by default
+checking for pkg-config... (cached) /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for libpcre support... yes
+checking for pkg-config... (cached) /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for libpcre support... yes
+checking for iconv.h... yes
+checking for ICONV support... yes
+checking if 'times' function supports null argument... yes
+checking for mkdir -p candidate... ok (/usr/bin/mkdir -p)
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating include/Makefile
+config.status: creating database/Makefile
+config.status: creating database/mysql/Makefile
+config.status: creating database/mysql/option-patches/Makefile
+config.status: creating database/oracle/Makefile
+config.status: creating database/oracle/option-patches/Makefile
+config.status: creating database/postgresql/Makefile
+config.status: creating database/postgresql/option-patches/Makefile
+config.status: creating database/postgresql/timescaledb/Makefile
+config.status: creating database/postgresql/timescaledb/option-patches/Makefile
+config.status: creating database/postgresql/timescaledb/option-patches/with-compression/Makefile
+config.status: creating database/postgresql/timescaledb/option-patches/without-compression/Makefile
+config.status: creating database/sqlite3/Makefile
+config.status: creating misc/Makefile
+config.status: creating src/Makefile
+config.status: creating src/go/Makefile
+config.status: creating src/libs/Makefile
+config.status: creating src/libs/zbxalgo/Makefile
+config.status: creating src/libs/zbxaudit/Makefile
+config.status: creating src/libs/zbxavailability/Makefile
+config.status: creating src/libs/zbxconnector/Makefile
+config.status: creating src/libs/zbxcommon/Makefile
+config.status: creating src/libs/zbxcomms/Makefile
+config.status: creating src/libs/zbxcommshigh/Makefile
+config.status: creating src/libs/zbxcompress/Makefile
+config.status: creating src/libs/zbxconf/Makefile
+config.status: creating src/libs/zbxcrypto/Makefile
+config.status: creating src/libs/zbxdb/Makefile
+config.status: creating src/libs/zbxcacheconfig/Makefile
+config.status: creating src/libs/zbxcachehistory/Makefile
+config.status: creating src/libs/zbxcachevalue/Makefile
+config.status: creating src/libs/zbxdbhigh/Makefile
+config.status: creating src/libs/zbxdbwrap/Makefile
+config.status: creating src/libs/zbxdbschema/Makefile
+config.status: creating src/libs/zbxdbupgrade/Makefile
+config.status: creating src/libs/zbxdiag/Makefile
+config.status: creating src/libs/zbxdiscovery/Makefile
+config.status: creating src/libs/zbxembed/Makefile
+config.status: creating src/libs/zbxeval/Makefile
+config.status: creating src/libs/zbxexec/Makefile
+config.status: creating src/libs/zbxexport/Makefile
+config.status: creating src/libs/zbxexpr/Makefile
+config.status: creating src/libs/zbxgetopt/Makefile
+config.status: creating src/libs/zbxha/Makefile
+config.status: creating src/libs/zbxhash/Makefile
+config.status: creating src/libs/zbxhistory/Makefile
+config.status: creating src/libs/zbxhttp/Makefile
+config.status: creating src/libs/zbxicmpping/Makefile
+config.status: creating src/libs/zbxip/Makefile
+config.status: creating src/libs/zbxipcservice/Makefile
+config.status: creating src/libs/zbxjson/Makefile
+config.status: creating src/libs/zbxkvs/Makefile
+config.status: creating src/libs/zbxlog/Makefile
+config.status: creating src/libs/zbxmedia/Makefile
+config.status: creating src/libs/zbxmodules/Makefile
+config.status: creating src/libs/zbxmutexs/Makefile
+config.status: creating src/libs/zbxprof/Makefile
+config.status: creating src/libs/zbxnix/Makefile
+config.status: creating src/libs/zbxnum/Makefile
+config.status: creating src/libs/zbxparam/Makefile
+config.status: creating src/libs/zbxpreproc/Makefile
+config.status: creating src/libs/zbxprometheus/Makefile
+config.status: creating src/libs/zbxregexp/Makefile
+config.status: creating src/libs/zbxrtc/Makefile
+config.status: creating src/libs/zbxself/Makefile
+config.status: creating src/libs/zbxserialize/Makefile
+config.status: creating src/libs/zbxserver/Makefile
+config.status: creating src/libs/zbxservice/Makefile
+config.status: creating src/libs/zbxshmem/Makefile
+config.status: creating src/libs/zbxstr/Makefile
+config.status: creating src/libs/zbxsysinfo/Makefile
+config.status: creating src/libs/zbxsysinfo/agent/Makefile
+config.status: creating src/libs/zbxsysinfo/aix/Makefile
+config.status: creating src/libs/zbxsysinfo/alias/Makefile
+config.status: creating src/libs/zbxsysinfo/common/Makefile
+config.status: creating src/libs/zbxsysinfo/freebsd/Makefile
+config.status: creating src/libs/zbxsysinfo/hpux/Makefile
+config.status: creating src/libs/zbxsysinfo/linux/Makefile
+config.status: creating src/libs/zbxsysinfo/netbsd/Makefile
+config.status: creating src/libs/zbxsysinfo/openbsd/Makefile
+config.status: creating src/libs/zbxsysinfo/osf/Makefile
+config.status: creating src/libs/zbxsysinfo/osx/Makefile
+config.status: creating src/libs/zbxsysinfo/simple/Makefile
+config.status: creating src/libs/zbxsysinfo/solaris/Makefile
+config.status: creating src/libs/zbxsysinfo/unknown/Makefile
+config.status: creating src/libs/zbxstats/Makefile
+config.status: creating src/libs/zbxtagfilter/Makefile
+config.status: creating src/libs/zbxtasks/Makefile
+config.status: creating src/libs/zbxthreads/Makefile
+config.status: creating src/libs/zbxtime/Makefile
+config.status: creating src/libs/zbxtimekeeper/Makefile
+config.status: creating src/libs/zbxtrends/Makefile
+config.status: creating src/libs/zbxvariant/Makefile
+config.status: creating src/libs/zbxvault/Makefile
+config.status: creating src/libs/zbxversion/Makefile
+config.status: creating src/libs/zbxxml/Makefile
+config.status: creating src/zabbix_agent/Makefile
+config.status: creating src/zabbix_agent/logfiles/Makefile
+config.status: creating src/zabbix_get/Makefile
+config.status: creating src/zabbix_java/Makefile
+config.status: creating src/zabbix_js/Makefile
+config.status: creating src/zabbix_proxy/Makefile
+config.status: creating src/zabbix_proxy/datasender/Makefile
+config.status: creating src/zabbix_proxy/diag/Makefile
+config.status: creating src/zabbix_proxy/housekeeper/Makefile
+config.status: creating src/zabbix_proxy/proxyconfig/Makefile
+config.status: creating src/zabbix_proxy/rtc/Makefile
+config.status: creating src/zabbix_proxy/proxyconfigwrite/Makefile
+config.status: creating src/zabbix_proxy/stats/Makefile
+config.status: creating src/zabbix_proxy/taskmanager/Makefile
+config.status: creating src/zabbix_sender/Makefile
+config.status: creating src/zabbix_server/Makefile
+config.status: creating src/zabbix_server/alerter/Makefile
+config.status: creating src/zabbix_server/availability/Makefile
+config.status: creating src/zabbix_server/connector/Makefile
+config.status: creating src/zabbix_server/dbconfig/Makefile
+config.status: creating src/zabbix_server/dbsyncer/Makefile
+config.status: creating src/zabbix_server/diag/Makefile
+config.status: creating src/zabbix_server/discoverer/Makefile
+config.status: creating src/zabbix_server/escalator/Makefile
+config.status: creating src/zabbix_server/ha/Makefile
+config.status: creating src/zabbix_server/housekeeper/Makefile
+config.status: creating src/zabbix_server/httppoller/Makefile
+config.status: creating src/zabbix_server/ipmi/Makefile
+config.status: creating src/zabbix_server/lld/Makefile
+config.status: creating src/zabbix_server/odbc/Makefile
+config.status: creating src/zabbix_server/pinger/Makefile
+config.status: creating src/zabbix_server/poller/Makefile
+config.status: creating src/zabbix_server/preprocessor/Makefile
+config.status: creating src/zabbix_server/proxyconfigread/Makefile
+config.status: creating src/zabbix_server/proxypoller/Makefile
+config.status: creating src/zabbix_server/reporter/Makefile
+config.status: creating src/zabbix_server/rtc/Makefile
+config.status: creating src/zabbix_server/scripts/Makefile
+config.status: creating src/zabbix_server/service/Makefile
+config.status: creating src/zabbix_server/snmptrapper/Makefile
+config.status: creating src/zabbix_server/stats/Makefile
+config.status: creating src/zabbix_server/taskmanager/Makefile
+config.status: creating src/zabbix_server/timer/Makefile
+config.status: creating src/zabbix_server/trapper/Makefile
+config.status: creating src/zabbix_server/vmware/Makefile
+config.status: creating man/Makefile
+config.status: creating include/common/config.h
+config.status: include/common/config.h is unchanged
+config.status: executing depfiles commands
+config.status: error: in `/home/ubuntu/zabbix-6.4.10':
+config.status: error: Something went wrong bootstrapping makefile fragments
+    for automatic dependency tracking.  If GNU make was not used, consider
+    re-running the configure script with MAKE="gmake" (or whatever is
+    necessary).  You can also try re-running configure with the
+    '--disable-dependency-tracking' option to at least be able to build
+    the package (albeit without support for automatic dependency tracking).
+See `config.log' for more details
+ubuntu@host-172-20-14-74:~/zabbix-6.4.10$ sudo apt-get install build-essential autoconf automake libtool
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+
+The following additional packages will be installed:
+  dpkg-dev fakeroot g++ g++-11 libalgorithm-diff-perl libalgorithm-diff-xs-perl libalgorithm-merge-perl libfakeroot libltdl-dev libltdl7 libstdc++-11-dev lto-disabled-list m4 make
+Suggested packages:
+  autoconf-archive gnu-standards autoconf-doc gettext debian-keyring g++-multilib g++-11-multilib gcc-11-doc libtool-doc libstdc++-11-doc gfortran | fortran95-compiler gcj-jdk m4-doc make-doc
+The following NEW packages will be installed:
+  autoconf automake build-essential dpkg-dev fakeroot g++ g++-11 libalgorithm-diff-perl libalgorithm-diff-xs-perl libalgorithm-merge-perl libfakeroot libltdl-dev libltdl7 libstdc++-11-dev libtool lto-disabled-list m4 make
+0 upgraded, 18 newly installed, 0 to remove and 7 not upgraded.
+Need to get 16.3 MB of archives.
+After this operation, 59.1 MB of additional disk space will be used.
+Get:1 http://kr-central-2-a.clouds.archive.ubuntu.com/ubuntu jammy/main amd64 m4 amd64 1.4.18-5ubuntu2 [199 kB]
+Get:2 http://kr-central-2-a.clouds.archive.ubuntu.com/ubuntu jammy/main amd64 autoconf all 2.71-2 [338 kB]
+Get:3 http://kr-central-2-a.clouds.archive.ubuntu.com/ubuntu jammy/main amd64 automake all 1:1.16.5-1.3 [558 kB]
+Get:4 http://kr-central-2-a.clouds.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libstdc++-11-dev amd64 11.4.0-1ubuntu1~22.04 [2101 kB]
+Get:5 http://kr-central-2-a.clouds.archive.ubuntu.com/ubuntu jammy-updates/main amd64 g++-11 amd64 11.4.0-1ubuntu1~22.04 [11.4 MB]
+Get:6 http://kr-central-2-a.clouds.archive.ubuntu.com/ubuntu jammy/main amd64 g++ amd64 4:11.2.0-1ubuntu1 [1412 B]
+Get:7 http://kr-central-2-a.clouds.archive.ubuntu.com/ubuntu jammy/main amd64 make amd64 4.3-4.1build1 [180 kB]
+Get:8 http://kr-central-2-a.clouds.archive.ubuntu.com/ubuntu jammy/main amd64 lto-disabled-list all 24 [12.5 kB]
+Get:9 http://kr-central-2-a.clouds.archive.ubuntu.com/ubuntu jammy-updates/main amd64 dpkg-dev all 1.21.1ubuntu2.2 [922 kB]
+Get:10 http://kr-central-2-a.clouds.archive.ubuntu.com/ubuntu jammy/main amd64 build-essential amd64 12.9ubuntu3 [4744 B]
+Get:11 http://kr-central-2-a.clouds.archive.ubuntu.com/ubuntu jammy/main amd64 libfakeroot amd64 1.28-1ubuntu1 [31.5 kB]
+Get:12 http://kr-central-2-a.clouds.archive.ubuntu.com/ubuntu jammy/main amd64 fakeroot amd64 1.28-1ubuntu1 [60.4 kB]
+Get:13 http://kr-central-2-a.clouds.archive.ubuntu.com/ubuntu jammy/main amd64 libalgorithm-diff-perl all 1.201-1 [41.8 kB]
+Get:14 http://kr-central-2-a.clouds.archive.ubuntu.com/ubuntu jammy/main amd64 libalgorithm-diff-xs-perl amd64 0.04-6build3 [11.9 kB]
+Get:15 http://kr-central-2-a.clouds.archive.ubuntu.com/ubuntu jammy/main amd64 libalgorithm-merge-perl all 0.08-3 [12.0 kB]
+Get:16 http://kr-central-2-a.clouds.archive.ubuntu.com/ubuntu jammy/main amd64 libltdl7 amd64 2.4.6-15build2 [39.6 kB]
+Get:17 http://kr-central-2-a.clouds.archive.ubuntu.com/ubuntu jammy/main amd64 libltdl-dev amd64 2.4.6-15build2 [169 kB]
+Get:18 http://kr-central-2-a.clouds.archive.ubuntu.com/ubuntu jammy/main amd64 libtool all 2.4.6-15build2 [164 kB]
+Fetched 16.3 MB in 7s (2399 kB/s)
+Selecting previously unselected package m4.
+(Reading database ... 113935 files and directories currently installed.)
+Preparing to unpack .../00-m4_1.4.18-5ubuntu2_amd64.deb ...
+Unpacking m4 (1.4.18-5ubuntu2) ...
+Selecting previously unselected package autoconf.
+Preparing to unpack .../01-autoconf_2.71-2_all.deb ...
+Unpacking autoconf (2.71-2) ...
+Selecting previously unselected package automake.
+Preparing to unpack .../02-automake_1%3a1.16.5-1.3_all.deb ...
+Unpacking automake (1:1.16.5-1.3) ...
+Selecting previously unselected package libstdc++-11-dev:amd64.
+Preparing to unpack .../03-libstdc++-11-dev_11.4.0-1ubuntu1~22.04_amd64.deb ...
+Unpacking libstdc++-11-dev:amd64 (11.4.0-1ubuntu1~22.04) ...
+Selecting previously unselected package g++-11.
+Preparing to unpack .../04-g++-11_11.4.0-1ubuntu1~22.04_amd64.deb ...
+Unpacking g++-11 (11.4.0-1ubuntu1~22.04) ...
+Selecting previously unselected package g++.
+Preparing to unpack .../05-g++_4%3a11.2.0-1ubuntu1_amd64.deb ...
+Unpacking g++ (4:11.2.0-1ubuntu1) ...
+Selecting previously unselected package make.
+Preparing to unpack .../06-make_4.3-4.1build1_amd64.deb ...
+Unpacking make (4.3-4.1build1) ...
+Selecting previously unselected package lto-disabled-list.
+Preparing to unpack .../07-lto-disabled-list_24_all.deb ...
+Unpacking lto-disabled-list (24) ...
+Selecting previously unselected package dpkg-dev.
+Preparing to unpack .../08-dpkg-dev_1.21.1ubuntu2.2_all.deb ...
+Unpacking dpkg-dev (1.21.1ubuntu2.2) ...
+Selecting previously unselected package build-essential.
+Preparing to unpack .../09-build-essential_12.9ubuntu3_amd64.deb ...
+Unpacking build-essential (12.9ubuntu3) ...
+Selecting previously unselected package libfakeroot:amd64.
+Preparing to unpack .../10-libfakeroot_1.28-1ubuntu1_amd64.deb ...
+Unpacking libfakeroot:amd64 (1.28-1ubuntu1) ...
+Selecting previously unselected package fakeroot.
+Preparing to unpack .../11-fakeroot_1.28-1ubuntu1_amd64.deb ...
+Unpacking fakeroot (1.28-1ubuntu1) ...
+Selecting previously unselected package libalgorithm-diff-perl.
+Preparing to unpack .../12-libalgorithm-diff-perl_1.201-1_all.deb ...
+Unpacking libalgorithm-diff-perl (1.201-1) ...
+Selecting previously unselected package libalgorithm-diff-xs-perl.
+Preparing to unpack .../13-libalgorithm-diff-xs-perl_0.04-6build3_amd64.deb ...
+Unpacking libalgorithm-diff-xs-perl (0.04-6build3) ...
+Selecting previously unselected package libalgorithm-merge-perl.
+Preparing to unpack .../14-libalgorithm-merge-perl_0.08-3_all.deb ...
+Unpacking libalgorithm-merge-perl (0.08-3) ...
+Selecting previously unselected package libltdl7:amd64.
+Preparing to unpack .../15-libltdl7_2.4.6-15build2_amd64.deb ...
+Unpacking libltdl7:amd64 (2.4.6-15build2) ...
+Selecting previously unselected package libltdl-dev:amd64.
+Preparing to unpack .../16-libltdl-dev_2.4.6-15build2_amd64.deb ...
+Unpacking libltdl-dev:amd64 (2.4.6-15build2) ...
+Selecting previously unselected package libtool.
+Preparing to unpack .../17-libtool_2.4.6-15build2_all.deb ...
+Unpacking libtool (2.4.6-15build2) ...
+Setting up lto-disabled-list (24) ...
+Setting up libtool (2.4.6-15build2) ...
+Setting up libalgorithm-diff-perl (1.201-1) ...
+Setting up m4 (1.4.18-5ubuntu2) ...
+Setting up libfakeroot:amd64 (1.28-1ubuntu1) ...
+Setting up fakeroot (1.28-1ubuntu1) ...
+update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode
+Setting up make (4.3-4.1build1) ...
+Setting up libltdl7:amd64 (2.4.6-15build2) ...
+Setting up autoconf (2.71-2) ...
+Setting up libstdc++-11-dev:amd64 (11.4.0-1ubuntu1~22.04) ...
+Setting up libalgorithm-diff-xs-perl (0.04-6build3) ...
+Setting up libalgorithm-merge-perl (0.08-3) ...
+Setting up automake (1:1.16.5-1.3) ...
+update-alternatives: using /usr/bin/automake-1.16 to provide /usr/bin/automake (automake) in auto mode
+Setting up g++-11 (11.4.0-1ubuntu1~22.04) ...
+Setting up dpkg-dev (1.21.1ubuntu2.2) ...
+Setting up libltdl-dev:amd64 (2.4.6-15build2) ...
+Setting up g++ (4:11.2.0-1ubuntu1) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+Setting up build-essential (12.9ubuntu3) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.6) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for install-info (6.8-4build1) ...
+Scanning processes...
+Scanning candidates...
+Scanning linux images...
+
+Running kernel seems to be up-to-date.
+
+Restarting services...
+Service restarts being deferred:
+ /etc/needrestart/restart.d/dbus.service
+ systemctl restart getty@tty1.service
+ systemctl restart networkd-dispatcher.service
+ systemctl restart systemd-logind.service
+ systemctl restart unattended-upgrades.service
+ systemctl restart user@1000.service
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+ubuntu@host-172-20-14-74:~/zabbix-6.4.10$ sudo ./configure --prefix=/home/zabbix/server --enable-server --enable-agent --with-mysql --enable-ipv6 --with-net-snmp --with-libcurl
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking how to create a pax tar archive... gnutar
+configure: Configuring Zabbix 6.4.10
+checking whether make sets $(MAKE)... (cached) yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking for cc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether cc accepts -g... yes
+checking for cc option to enable C11 features... none needed
+checking whether cc understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of cc... gcc3
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for netdb.h... yes
+checking for signal.h... yes
+checking for syslog.h... yes
+checking for time.h... yes
+checking for errno.h... yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for netinet/in.h... yes
+checking for math.h... yes
+checking for sys/socket.h... yes
+checking for dirent.h... yes
+checking for ctype.h... yes
+checking for mtent.h... no
+checking for fcntl.h... yes
+checking for sys/param.h... yes
+checking for arpa/inet.h... yes
+checking for sys/vfs.h... yes
+checking for sys/pstat.h... no
+checking for sys/sysinfo.h... yes
+checking for sys/statvfs.h... yes
+checking for sys/statfs.h... yes
+checking for sys/socket.h... (cached) yes
+checking for sys/loadavg.h... no
+checking for arpa/inet.h... (cached) yes
+checking for sys/vmmeter.h... no
+checking for strings.h... (cached) yes
+checking for vm/vm_param.h... no
+checking for sys/time.h... yes
+checking for kstat.h... no
+checking for sys/syscall.h... yes
+checking for sys/sysmacros.h... yes
+checking for stdint.h... (cached) yes
+checking for mach/host_info.h... no
+checking for mach/mach_host.h... no
+checking for knlist.h... no
+checking for pwd.h... yes
+checking for sys/var.h... no
+checking for arpa/nameser.h... yes
+checking for assert.h... yes
+checking for sys/dkstat.h... no
+checking for sys/disk.h... no
+checking for sys/sched.h... no
+checking for zone.h... no
+checking for nlist.h... no
+checking for kvm.h... no
+checking for linux/kernel.h... yes
+checking for procinfo.h... no
+checking for sys/dk.h... no
+checking for sys/resource.h... yes
+checking for pthread.h... yes
+checking for windows.h... no
+checking for process.h... no
+checking for conio.h... no
+checking for sys/wait.h... yes
+checking for stdarg.h... yes
+checking for winsock2.h... no
+checking for pdh.h... no
+checking for psapi.h... no
+checking for sys/sem.h... yes
+checking for sys/ipc.h... yes
+checking for sys/shm.h... yes
+checking for Winldap.h... no
+checking for Winber.h... no
+checking for lber.h... no
+checking for ws2tcpip.h... no
+checking for inttypes.h... (cached) yes
+checking for sys/file.h... yes
+checking for grp.h... yes
+checking for execinfo.h... yes
+checking for sys/systemcfg.h... no
+checking for sys/mnttab.h... no
+checking for mntent.h... yes
+checking for sys/times.h... yes
+checking for dlfcn.h... yes
+checking for sys/utsname.h... yes
+checking for sys/un.h... yes
+checking for sys/protosw.h... no
+checking for stddef.h... yes
+checking for limits.h... yes
+checking for float.h... yes
+checking for resolv.h... yes
+checking for net/if.h... yes
+checking for net/if_mib.h... no
+checking whether compiler supports -Werror=cpp... yes
+checking for sys/mount.h... yes
+checking for sys/proc.h... no
+checking for sys/sysctl.h... no
+checking for sys/user.h... yes
+checking for sys/swap.h... yes
+checking for sys/ucontext.h... yes
+checking for devstat.h... no
+checking for linux/netlink.h... yes
+checking for linux/inet_diag.h... yes
+checking for libperfstat.h... no
+checking for library containing socket... none required
+checking for library containing kstat_open... no
+checking for library containing gethostbyname... none required
+checking for library containing clock_gettime... none required
+checking for library containing dlopen... none required
+checking for library containing perfstat_memory_total... no
+checking for library containing devstat_getdevs... no
+checking for library containing getdevs... no
+checking for library containing backtrace_symbols... none required
+checking for library containing jail_getname... no
+checking for main in -lm... yes
+checking for main in -lkvm... no
+checking for main in -lpthread... yes
+checking for DNS lookup functions... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for an ANSI C-conforming const... yes
+checking for pid_t... yes
+checking for socklen_t... yes
+checking for actual socklen_t parameter type in socket functions... socklen_t
+checking for integer field name in union sigval of struct siginfo_t... sival_int
+checking for res_ninit... yes
+checking for res_ndestroy... no
+checking for _res._u._ext.nsaddrs... yes
+checking for _res._u._ext.ext... no
+checking for _res._ext.ext.nsaddrs... no
+checking for struct sockaddr_in6.sin6_len... no
+checking for union semun... no
+checking for struct swaptable in sys/swap.h... no
+checking for struct sensordev in sys/sensors.h... no
+checking for struct statvfs64 in sys/statvfs.h... no
+checking for struct statfs64 in sys/statfs.h... no
+checking for field ss_family in struct sockaddr_storage... yes
+checking for field mem_unit in struct sysinfo... yes
+checking for field freeswap in struct sysinfo... yes
+checking for field totalswap in struct sysinfo... yes
+checking for field totalram in struct sysinfo... yes
+checking for field sharedram in struct sysinfo... yes
+checking for field bufferram in struct sysinfo... yes
+checking for field freeram in struct sysinfo... yes
+checking for field uptime in struct sysinfo... yes
+checking for field procs in struct sysinfo... yes
+checking for field tm_gmtoff in struct tm... yes
+checking for linker options --start-group/--end-group... yes
+checking for '__thread' compiler support... yes
+checking for field updates in struct vminfo_t... no
+checking for function sysconf() in unistd.h... yes
+checking for function initgroups()... yes
+checking for functions seteuid() and setegid()... yes
+checking for function setproctitle()... no
+checking for function sysctlbyname()... no
+checking for function sysctl (KERN_BOOTTIME)... no
+checking for function sysctl (HW_NCPU)... no
+checking for function sysctl (KERN_MAXFILES)... no
+checking for function sysctl (KERN_MAXPROC)... no
+checking for function sysctl (KERN_CPTIME,KERN_CPTIME2)... no
+checking for function clock_gettime in time.h... yes
+checking for macro __va_copy() in stdarg.h... yes
+checking for macro __VA_ARGS__... yes
+checking for getloadavg... yes
+checking for hstrerror... yes
+checking for getenv... yes
+checking for putenv... yes
+checking for setenv... yes
+checking for tzset... yes
+checking for unsetenv... yes
+checking for sigqueue... yes
+checking for round... yes
+checking for /proc filesystem... yes
+checking for file /proc/stat... yes
+checking for file /proc/cpuinfo... yes
+checking for file /proc/0/psinfo... no
+checking for file /proc/loadavg... yes
+checking for file /proc/net/dev... yes
+checking for long long format... no
+checking for -rdynamic linking option... yes
+checking for libperfstat 5.2.0.40 fileset... no
+checking for libperfstat 5.3.0.60 fileset... no
+checking for architecture... linux (linux-gnu)
+checking for the linux kernel version... unknown family (5.15.0-86-generic)
+checking size of void *... 8
+checking for mysql_config... /usr/bin/mysql_config
+checking for main in -lmysqlclient... yes
+checking for main in -lzstd... yes
+checking for main in -lssl... yes
+checking for main in -lcrypto... yes
+checking for main in -lresolv... yes
+checking for main in -lm... (cached) yes
+checking for TLS support in MySQL library... yes
+checking for TLS ciphersuites in MySQL library... yes
+checking for MariaDB init options function... no
+checking for MySQL init options function... yes
+checking for Oracle support... no
+checking for Zabbix server/proxy database selection... ok
+checking for multirow insert statements... yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for net-snmp-config... /usr/bin/net-snmp-config
+checking version of netsnmp library... yes
+checking for main in -lnetsnmp... yes
+checking for strong SHA auth protocol support... yes
+checking for strong AES privacy protocol support... yes
+checking for localname in struct snmp_session... yes
+yes
+checking for zlib support... yes
+checking for pthread.h... (cached) yes
+checking for process shared libpthread support... yes
+checking for libevent support... yes
+checking for gawk... (cached) gawk
+checking for curl-config... /usr/bin/curl-config
+checking for the version of libcurl... 7.81.0
+checking for libcurl >= version 7.13.1... yes
+checking for main in -lcurl... yes
+checking whether libcurl is usable... yes
+checking for curl_free... yes
+checking for curl_easy_escape... yes
+configure: using old pcre library by default
+checking for pkg-config... (cached) /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for libpcre support... yes
+checking for pkg-config... (cached) /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for libpcre support... yes
+checking for iconv.h... yes
+checking for ICONV support... yes
+checking if 'times' function supports null argument... yes
+checking for mkdir -p candidate... ok (/usr/bin/mkdir -p)
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating include/Makefile
+config.status: creating database/Makefile
+config.status: creating database/mysql/Makefile
+config.status: creating database/mysql/option-patches/Makefile
+config.status: creating database/oracle/Makefile
+config.status: creating database/oracle/option-patches/Makefile
+config.status: creating database/postgresql/Makefile
+config.status: creating database/postgresql/option-patches/Makefile
+config.status: creating database/postgresql/timescaledb/Makefile
+config.status: creating database/postgresql/timescaledb/option-patches/Makefile
+config.status: creating database/postgresql/timescaledb/option-patches/with-compression/Makefile
+config.status: creating database/postgresql/timescaledb/option-patches/without-compression/Makefile
+config.status: creating database/sqlite3/Makefile
+config.status: creating misc/Makefile
+config.status: creating src/Makefile
+config.status: creating src/go/Makefile
+config.status: creating src/libs/Makefile
+config.status: creating src/libs/zbxalgo/Makefile
+config.status: creating src/libs/zbxaudit/Makefile
+config.status: creating src/libs/zbxavailability/Makefile
+config.status: creating src/libs/zbxconnector/Makefile
+config.status: creating src/libs/zbxcommon/Makefile
+config.status: creating src/libs/zbxcomms/Makefile
+config.status: creating src/libs/zbxcommshigh/Makefile
+config.status: creating src/libs/zbxcompress/Makefile
+config.status: creating src/libs/zbxconf/Makefile
+config.status: creating src/libs/zbxcrypto/Makefile
+config.status: creating src/libs/zbxdb/Makefile
+config.status: creating src/libs/zbxcacheconfig/Makefile
+config.status: creating src/libs/zbxcachehistory/Makefile
+config.status: creating src/libs/zbxcachevalue/Makefile
+config.status: creating src/libs/zbxdbhigh/Makefile
+config.status: creating src/libs/zbxdbwrap/Makefile
+config.status: creating src/libs/zbxdbschema/Makefile
+config.status: creating src/libs/zbxdbupgrade/Makefile
+config.status: creating src/libs/zbxdiag/Makefile
+config.status: creating src/libs/zbxdiscovery/Makefile
+config.status: creating src/libs/zbxembed/Makefile
+config.status: creating src/libs/zbxeval/Makefile
+config.status: creating src/libs/zbxexec/Makefile
+config.status: creating src/libs/zbxexport/Makefile
+config.status: creating src/libs/zbxexpr/Makefile
+config.status: creating src/libs/zbxgetopt/Makefile
+config.status: creating src/libs/zbxha/Makefile
+config.status: creating src/libs/zbxhash/Makefile
+config.status: creating src/libs/zbxhistory/Makefile
+config.status: creating src/libs/zbxhttp/Makefile
+config.status: creating src/libs/zbxicmpping/Makefile
+config.status: creating src/libs/zbxip/Makefile
+config.status: creating src/libs/zbxipcservice/Makefile
+config.status: creating src/libs/zbxjson/Makefile
+config.status: creating src/libs/zbxkvs/Makefile
+config.status: creating src/libs/zbxlog/Makefile
+config.status: creating src/libs/zbxmedia/Makefile
+config.status: creating src/libs/zbxmodules/Makefile
+config.status: creating src/libs/zbxmutexs/Makefile
+config.status: creating src/libs/zbxprof/Makefile
+config.status: creating src/libs/zbxnix/Makefile
+config.status: creating src/libs/zbxnum/Makefile
+config.status: creating src/libs/zbxparam/Makefile
+config.status: creating src/libs/zbxpreproc/Makefile
+config.status: creating src/libs/zbxprometheus/Makefile
+config.status: creating src/libs/zbxregexp/Makefile
+config.status: creating src/libs/zbxrtc/Makefile
+config.status: creating src/libs/zbxself/Makefile
+config.status: creating src/libs/zbxserialize/Makefile
+config.status: creating src/libs/zbxserver/Makefile
+config.status: creating src/libs/zbxservice/Makefile
+config.status: creating src/libs/zbxshmem/Makefile
+config.status: creating src/libs/zbxstr/Makefile
+config.status: creating src/libs/zbxsysinfo/Makefile
+config.status: creating src/libs/zbxsysinfo/agent/Makefile
+config.status: creating src/libs/zbxsysinfo/aix/Makefile
+config.status: creating src/libs/zbxsysinfo/alias/Makefile
+config.status: creating src/libs/zbxsysinfo/common/Makefile
+config.status: creating src/libs/zbxsysinfo/freebsd/Makefile
+config.status: creating src/libs/zbxsysinfo/hpux/Makefile
+config.status: creating src/libs/zbxsysinfo/linux/Makefile
+config.status: creating src/libs/zbxsysinfo/netbsd/Makefile
+config.status: creating src/libs/zbxsysinfo/openbsd/Makefile
+config.status: creating src/libs/zbxsysinfo/osf/Makefile
+config.status: creating src/libs/zbxsysinfo/osx/Makefile
+config.status: creating src/libs/zbxsysinfo/simple/Makefile
+config.status: creating src/libs/zbxsysinfo/solaris/Makefile
+config.status: creating src/libs/zbxsysinfo/unknown/Makefile
+config.status: creating src/libs/zbxstats/Makefile
+config.status: creating src/libs/zbxtagfilter/Makefile
+config.status: creating src/libs/zbxtasks/Makefile
+config.status: creating src/libs/zbxthreads/Makefile
+config.status: creating src/libs/zbxtime/Makefile
+config.status: creating src/libs/zbxtimekeeper/Makefile
+config.status: creating src/libs/zbxtrends/Makefile
+config.status: creating src/libs/zbxvariant/Makefile
+config.status: creating src/libs/zbxvault/Makefile
+config.status: creating src/libs/zbxversion/Makefile
+config.status: creating src/libs/zbxxml/Makefile
+config.status: creating src/zabbix_agent/Makefile
+config.status: creating src/zabbix_agent/logfiles/Makefile
+config.status: creating src/zabbix_get/Makefile
+config.status: creating src/zabbix_java/Makefile
+config.status: creating src/zabbix_js/Makefile
+config.status: creating src/zabbix_proxy/Makefile
+config.status: creating src/zabbix_proxy/datasender/Makefile
+config.status: creating src/zabbix_proxy/diag/Makefile
+config.status: creating src/zabbix_proxy/housekeeper/Makefile
+config.status: creating src/zabbix_proxy/proxyconfig/Makefile
+config.status: creating src/zabbix_proxy/rtc/Makefile
+config.status: creating src/zabbix_proxy/proxyconfigwrite/Makefile
+config.status: creating src/zabbix_proxy/stats/Makefile
+config.status: creating src/zabbix_proxy/taskmanager/Makefile
+config.status: creating src/zabbix_sender/Makefile
+config.status: creating src/zabbix_server/Makefile
+config.status: creating src/zabbix_server/alerter/Makefile
+config.status: creating src/zabbix_server/availability/Makefile
+config.status: creating src/zabbix_server/connector/Makefile
+config.status: creating src/zabbix_server/dbconfig/Makefile
+config.status: creating src/zabbix_server/dbsyncer/Makefile
+config.status: creating src/zabbix_server/diag/Makefile
+config.status: creating src/zabbix_server/discoverer/Makefile
+config.status: creating src/zabbix_server/escalator/Makefile
+config.status: creating src/zabbix_server/ha/Makefile
+config.status: creating src/zabbix_server/housekeeper/Makefile
+config.status: creating src/zabbix_server/httppoller/Makefile
+config.status: creating src/zabbix_server/ipmi/Makefile
+config.status: creating src/zabbix_server/lld/Makefile
+config.status: creating src/zabbix_server/odbc/Makefile
+config.status: creating src/zabbix_server/pinger/Makefile
+config.status: creating src/zabbix_server/poller/Makefile
+config.status: creating src/zabbix_server/preprocessor/Makefile
+config.status: creating src/zabbix_server/proxyconfigread/Makefile
+config.status: creating src/zabbix_server/proxypoller/Makefile
+config.status: creating src/zabbix_server/reporter/Makefile
+config.status: creating src/zabbix_server/rtc/Makefile
+config.status: creating src/zabbix_server/scripts/Makefile
+config.status: creating src/zabbix_server/service/Makefile
+config.status: creating src/zabbix_server/snmptrapper/Makefile
+config.status: creating src/zabbix_server/stats/Makefile
+config.status: creating src/zabbix_server/taskmanager/Makefile
+config.status: creating src/zabbix_server/timer/Makefile
+config.status: creating src/zabbix_server/trapper/Makefile
+config.status: creating src/zabbix_server/vmware/Makefile
+config.status: creating man/Makefile
+config.status: creating include/common/config.h
+config.status: include/common/config.h is unchanged
+config.status: executing depfiles commands
+
+
+Configuration:
+
+  Detected OS:           linux-gnu
+  Install path:          /home/zabbix/server
+  Compilation arch:      linux
+
+  Compiler:              cc
+  Compiler flags:         -g -O2
+
+  Library-specific flags:
+    database:              -I/usr/include/mysql
+    Net-SNMP:               -I/usr/local/include -I/usr/lib/x86_64-linux-gnu/perl/5.34/CORE -I. -I/usr/include
+
+  Enable server:         yes
+  Server details:
+    With database:         MySQL
+    WEB Monitoring:        cURL
+      SSL certificates:      /home/zabbix/server/share/zabbix/ssl/certs
+      SSL keys:              /home/zabbix/server/share/zabbix/ssl/keys
+    SNMP:                  yes
+    IPMI:                  no
+    SSH:                   no
+    TLS:                   no
+    ODBC:                  no
+    Linker flags:           -L/usr/lib/x86_64-linux-gnu   -L/usr/lib/x86_64-linux-gnu               -rdynamic
+    Libraries:              -lmysqlclient  -lzstd -lssl -lcrypto -lresolv -lm       -lnetsnmp    -lz -lpthread -levent -levent_pthreads    -lcurl -lpthread -lm    -lpcre
+    Configuration file:    /home/zabbix/server/etc/zabbix_server.conf
+    External scripts:      /home/zabbix/server/share/zabbix/externalscripts
+    Alert scripts:         /home/zabbix/server/share/zabbix/alertscripts
+    Modules:               /home/zabbix/server/lib/modules
+
+  Enable proxy:          no
+
+  Enable agent:          yes
+  Agent details:
+    TLS:                   no
+    Modbus:                no
+    Linker flags:                -rdynamic
+    Libraries:              -lz -lpthread    -lcurl -lpthread -lm    -lpcre
+    Configuration file:    /home/zabbix/server/etc/zabbix_agentd.conf
+    Modules:               /home/zabbix/server/lib/modules
+
+  Enable agent 2:        no
+
+  Enable web service:    no
+
+  Enable Java gateway:   no
+
+  LDAP support:          no
+  IPv6 support:          yes
+  cmocka support:        no
+
+  yaml support:          no
+
+***********************************************************
+*            Now run 'make install'                       *
+*                                                         *
+*            Thank you for using Zabbix!                  *
+*              <http://www.zabbix.com>                    *
+***********************************************************
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Linker flags (-L 및 -rdynamic):
+    -L/usr/lib/x86_64-linux-gnu: 컴파일러에게 /usr/lib/x86_64-linux-gnu 디렉토리에서 라이브러리를 찾도록 하는 옵션입니다.
+    -rdynamic: 현재 프로그램의 심볼 테이블에 모든 심볼을 추가하는 옵션으로, 런타임에 동적으로 라이브러리를 로딩할 때 필요합니다.
+
+Libraries (-l로 시작하는 항목들):
+    -lmysqlclient: MySQL 클라이언트 라이브러리를 사용하도록 하는 옵션입니다.
+    -lpthread: POSIX 스레딩을 지원하는 라이브러리로, 다중 스레드 프로그래밍을 위해 사용됩니다.
+    -ldl: 동적 링크를 위한 라이브러리로, dlopen 및 관련 함수를 사용할 때 필요합니다.
+    -lssl -lcrypto: OpenSSL 라이브러리를 사용하도록 하는 옵션으로, SSL 및 암호화 기능을 지원합니다.
+    -lresolv: 네트워크 주소 해결을 위한 라이브러리로, DNS 등의 기능을 사용할 때 필요합니다.
+    -lm: 수학 함수를 제공하는 라이브러리로, 수학적 계산을 위해 사용됩니다.
+    -lrt: 리얼타임 라이브러리로, 실시간 시계 및 시간 관련 함수를 사용할 때 필요합니다.
+    -lnetsnmp: Net-SNMP 라이브러리를 사용하도록 하는 옵션으로, SNMP 프로토콜 지원에 필요합니다.
+    -lz: zlib 라이브러리로, 데이터 압축 및 해제에 사용됩니다.
+    -levent -levent_pthreads: 이벤트 라이브러리를 사용하도록 하는 옵션으로, 비동기 이벤트 처리를 지원합니다.
+    -lcurl: cURL 라이브러리를 사용하도록 하는 옵션으로, 웹 관련 기능을 지원합니다.
+    -lresolv: 네트워크 주소 해결을 위한 라이브러리로, DNS 등의 기능을 사용할 때 필요합니다.
+    -lpcre: Perl Compatible Regular Expressions (PCRE) 라이브러리로, 정규 표현식 처리에 사용됩니다.
+
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
