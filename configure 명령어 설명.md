@@ -1,27 +1,27 @@
-명령어 분석
-$ sudo ./configure --prefix=/home/zabbix/server --enable-server --enable-agent --with-mysql --enable-ipv6 --with-net-snmp --with-libcurl
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------
-./configure: 현재 디렉토리에 위치한 configure 스크립트를 실행합니다. 이 스크립트는 소프트웨어를 빌드하기 전에 시스템에 맞게 설정을 조정하는데 사용됩니다.
-
---prefix=/home/zabbix/server:
-    소프트웨어의 설치 위치를 지정합니다. 여기서는 Zabbix 서버를 /home/zabbix/server 디렉토리에 설치하도록 지정합니다.
-
---enable-server:
-    Zabbix 서버를 빌드하도록 활성화합니다. 이 옵션이 있어야만 Zabbix 서버가 빌드됩니다.
-
---enable-agent:
-    Zabbix 에이전트를 빌드하도록 활성화합니다. Zabbix 에이전트는 Zabbix 서버로부터 시스템 정보를 수집하여 전송하는 역할을 합니다.
-
---with-mysql:
-    MySQL 데이터베이스를 사용하는 Zabbix 서버를 빌드하도록 활성화합니다. 이 옵션은 Zabbix 서버가 MySQL 데이터베이스를 사용하여 모니터링 데이터를 저장할 수 있게 합니다.
-
---enable-ipv6:
-    IPv6를 지원하도록 활성화합니다. IPv6는 인터넷 프로토콜의 다음 세대로, 더 많은 주소를 제공하고 보안을 강화하는 데 사용됩니다.
-
---with-net-snmp:
-    SNMP (Simple Network Management Protocol)를 사용하도록 활성화합니다. SNMP는 네트워크 기기 및 서버에서 정보를 수집하는 데 사용되며, Zabbix는 이를 통해 네트워크 장치를 모니터링할 수 있습니다.
-
---with-libcurl:
-    libcurl 라이브러리를 사용하도록 활성화합니다. libcurl은 URL을 통해 데이터를 전송하는 기능을 제공하며, 이를 통해 Zabbix 서버는 원격 시스템과 통신할 수 있습니다.
+## 명령어 분석
+  $ sudo ./configure --prefix=/home/zabbix/server --enable-server --enable-agent --with-mysql --enable-ipv6 --with-net-snmp --with-libcurl  
+  
+----------------------------------------------------------------------------------------------------------------------------------------------------------  
+./configure: 현재 디렉토리에 위치한 configure 스크립트를 실행합니다. 이 스크립트는 소프트웨어를 빌드하기 전에 시스템에 맞게 설정을 조정하는데 사용됩니다.  
+  
+-- ## prefix=/home/zabbix/server:  
+    소프트웨어의 설치 위치를 지정합니다. 여기서는 Zabbix 서버를 /home/zabbix/server 디렉토리에 설치하도록 지정합니다.  
+  
+-- ## enable-server:  
+    Zabbix 서버를 빌드하도록 활성화합니다. 이 옵션이 있어야만 Zabbix 서버가 빌드됩니다.  
+  
+-- ## enable-agent:  
+    Zabbix 에이전트를 빌드하도록 활성화합니다. Zabbix 에이전트는 Zabbix 서버로부터 시스템 정보를 수집하여 전송하는 역할을 합니다.  
+  
+-- ## with-mysql:  
+    MySQL 데이터베이스를 사용하는 Zabbix 서버를 빌드하도록 활성화합니다. 이 옵션은 Zabbix 서버가 MySQL 데이터베이스를 사용하여 모니터링 데이터를 저장할 수 있게 합니다.  
+  
+-- ## enable-ipv6:  
+    IPv6를 지원하도록 활성화합니다. IPv6는 인터넷 프로토콜의 다음 세대로, 더 많은 주소를 제공하고 보안을 강화하는 데 사용됩니다.  
+  
+-- ## with-net-snmp:  
+    SNMP (Simple Network Management Protocol)를 사용하도록 활성화합니다. SNMP는 네트워크 기기 및 서버에서 정보를 수집하는 데 사용되며, Zabbix는 이를 통해 네트워크 장치를 모니터링할 수 있습니다.  
+  
+-- ## with-libcurl:  
+    libcurl 라이브러리를 사용하도록 활성화합니다. libcurl은 URL을 통해 데이터를 전송하는 기능을 제공하며, 이를 통해 Zabbix 서버는 원격 시스템과 통신할 수 있습니다.  
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
