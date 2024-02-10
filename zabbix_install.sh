@@ -68,7 +68,7 @@ cd zabbix-7.0.0beta1/
 sudo groupadd --system zabbix
 sudo useradd --system -g zabbix -d /usr/lib/zabbix -s /sbin/nologin -c "Zabbix Monitoring System" zabbix
 
-# 7. APT 저장서 재업데이트
+# 7. APT 저장소 재업데이트
 sudo apt-get update
 
 # 8. UFW 방화벽 규칙 구성 (필요시)
