@@ -4,7 +4,7 @@ sudo apt update
 # 2. 호스트 이름을 'zabbixhost'로 설정
 sudo hostnamectl set-hostname zabbixhost
 
-# 20-22. 쉘 스크립트 생성 및 실행
+# 3. 필요한 패키지 설치
 cat << EOF > run.sh
 #!/bin/bash
 sudo apt-get install git
@@ -42,133 +42,95 @@ sudo apt-get install php8.1-mysql
 sudo apt-get install php8.1-curl
 sudo apt-get install php8.1-mbstring
 sudo apt-get install php8.1-xml
+sudo ap-get install php8.1-common
+sudo apt-get install php8.1-yaml
+sudo apt-get install php8.1-http
+sudo apt-get install php8.1-dev
+sudo apt-get install php8.1-cli
+sudo apt-get install php8.1-apcu
 sudo apt-get install php-gd
 sudo apt-get install php-mysql
 sudo apt-get install php-bcmath
 sudo apt-get install php-ldap
-sudo apt-get install zabbix-server-mysql
-sudo apt-get install zabbix-apache-conf
-sudo apt-get install zabbix-sql-scripts
-sudo apt-get install zabbix-sql-scripts
-EOF
-chmod +x run.sh
-# run.sh에 필요한 명령어 추가
-sudo chmod 777 run.sh
-sudo ./run.sh
+sudo apt-get install unixodbc
+sudo apt-get install unixodbc-dev
 
-# 23-25. PHP 및 MySQL 버전 확인
+# 4. PHP 및 MySQL 버전 확인
 php --version
 mysql --version
 
-# 26-30. Zabbix 소스 다운로드 및 압축 해제
-sudo wget https://cdn.zabbix.com/zabbix/sources/stable/6.4/zabbix-6.4.10.tar.gz
-tar -xvf zabbix-6.4.10.tar.gz
-cd zabbix-6.4.10/
+# 5. Zabbix 소스 다운로드 및 압축 해제
+sudo wget https://cdn.zabbix.com/zabbix/sources/development/7.0/zabbix-7.0.0beta1.tar.gz
+tar -xvf zabbix-7.0.0beta1.tar.gz
+cd zabbix-7.0.0beta1/
 
+# 6. group, user 추가
+sudo groupadd --system zabbix
+sudo useradd --system -g zabbix -d /usr/lib/zabbix -s /sbin/nologin -c "Zabbix Monitoring System" zabbix
+
+# 7. APT 저장서 재업데이트
 sudo apt-get update
 
-# 44-53. UFW 방화벽 규칙 구성
+# 8. UFW 방화벽 규칙 구성 (필요시)
+sudo ufw allow 22/tcp     # SSHD
 sudo ufw allow 80/tcp     # HTTP
 sudo ufw allow 443/tcp    # HTTPS
 sudo ufw allow 3306/tcp
-sudo ufw allow 8080/tcp
-sudo ufw allow 9000/tcp
-sudo ufw allow 3000/tcp
-sudo ufw allow 8081/tcp
 sudo ufw allow 10050/tcp
 sudo ufw allow 10051/tcp
 
-# 54-55. Zabbix용 MySQL 구성 수정
+# 9. 필요시 MySQL 외부접속 환경설정 수정
 sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
     # 각 파일에서 특정 설정 수정
     bind-address            = 0.0.0.0
     mysqlx-bind-address     = 0.0.0.0
 
-# PHP 및 MySQL 구성 수정
-sudo vim /etc/php/7.4/cli/php.ini
-sudo vim /etc/php/7.4/apache2/php.ini
+# 10. 필수 설정 환경 설정 수정
+sudo vim /etc/php/8.1/cli/php.ini
+sudo vim /etc/php/8.1/apache2/php.ini
    post_max_size = 16M
    max_execution_time = 300
    max_input_time = 300
 
-sudo groupadd --system zabbix
-sudo useradd --system -g zabbix -d /usr/lib/zabbix -s /sbin/nologin -c "Zabbix Monitoring System" zabbix
-
-# 58-60. Zabbix용 MySQL 및 Zabbix 데이터베이스 설정을 위한 MySQL 명령어
-cd database/mysql
+# 11. mysql에서 zabbix 계정 만들기
 sudo mysql -u root -p
+Password : <Password>
+
+또는
+sudo mysql -u root
+<Enter>
+
 # 제공된 Zabbix 데이터베이스 설정용 MySQL 명령어 실행
- mysql > alter user 'root'@'localhost' IDENTIFIED by '1234'; 
-    mysql > create database zabbix character set utf8mb4 collate utf8mb4_bin;
-    mysql > create user zabbix@localhost identified by 'zabbix';
-    mysql > grant all privileges on zabbix.* to 'zabbix'@'localhost';
-    mysql > GRANT ALL PRIVILEGES ON zabbix.* TO 'zabbix'@'localhost' WITH GRANT OPTION;
-    mysql > set global log_bin_trust_function_creators = 1;
-    mysql > quit; 
+mysql > alter user 'root'@'localhost' IDENTIFIED by '1234'; 
+mysql > create database zabbix character set utf8mb4 collate utf8mb4_bin;
+mysql > create user zabbix@localhost identified by 'zabbix';
+mysql > grant all privileges on zabbix.* to 'zabbix'@'localhost';
+mysql > GRANT ALL PRIVILEGES ON zabbix.* TO 'zabbix'@'localhost' WITH GRANT OPTION;
+mysql > set global log_bin_trust_function_creators = 1;
+mysql > quit;    17  sudo mysql -uzabbix -pzabbix
 
-    CREATE USER 'zabbix'@'%' IDENTIFIED BY 'zabbix';
-    GRANT ALL PRIVILEGES ON *.* TO 'zabbix'@'%' WITH GRANT OPTION;
-    set global log_bin_trust_function_creators = 1;
-    FLUSH PRIVILEGES;
+# 12. 나가서 zabbix/database/mysql 에 들어가서 아래 작업 수행
+sudo mysql -uzabbix -p zabbix < schema.sql
+sudo mysql -uzabbix -p zabbix < images.sql
+sudo mysql -uzabbix -p zabbix --default-character-set=utf8mb4 zabbix < data.sql
+sudo mysql -uzabbix -p zabbix < data.sql
 
-    SOURCE /home/ubuntu/zabbix-6.4.10/database/mysql/schema.sql
-    mysql> SOURCE /home/ubuntu/zabbix-6.4.10/database/mysql/images.sql
-    mysql> SOURCE /home/ubuntu/zabbix-6.4.10/database/mysql/data.sql
-    ------------------------------------------------------------------------
-    mysql> use zabbix;
-        Database changed
-    mysql>  SOURCE /home/ubuntu/zabbix-6.4.10/database/mysql/schema.sql
-        Query OK, 0 rows affected (0.04 sec)
-        Query OK, 0 rows affected (0.07 sec)
-        Records: 0  Duplicates: 0  Warnings: 0
-    mysql> SOURCE /home/ubuntu/zabbix-6.4.10/database/mysql/images.sql
-        Query OK, 1 row affected (0.01 sec)
-        Query OK, 1 row affected (0.01 sec)
-    mysql> SOURCE /home/ubuntu/zabbix-6.4.10/database/mysql/data.sql
-        Query OK, 1 row affected (0.00 sec)
-        Query OK, 1 row affected (0.00 sec)
-        Query OK, 79825 rows affected (0.52 sec)
-        Query OK, 0 rows affected (0.19 sec)
-    mysql> exit
-    ------------------------------------------------------------------------
-# 71. MySQL log_bin_trust_function_creators 비활성화
+# 13. DB 작업까지 마친 후 MySQL log_bin_trust_function_creators 비활성화
 sudo mysql -u root
 set global log_bin_trust_function_creators = 0;
 quit;
 
-# iptables 리다이렉션 설정
-sudo iptables -t nat -A PREROUTING -p tcp --dport 10050 -j REDIRECT --to-port 10050
-sudo iptables -t nat -A PREROUTING -p tcp --dport 10051 -j REDIRECT --to-port 10051
-sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 80
-sudo iptables -t nat -A PREROUTING -p tcp --dport 3306 -j REDIRECT --to-port 3306
-sudo iptables -t nat -L --line-numbers
-    Chain PREROUTING (policy ACCEPT)
-    num  target     prot opt source               destination
-    1    REDIRECT   tcp  --  anywhere             anywhere             tcp dpt:zabbix-agent redir ports 10050
-    2    REDIRECT   tcp  --  anywhere             anywhere             tcp dpt:zabbix-trapper redir ports 10051
-    3    REDIRECT   tcp  --  anywhere             anywhere             tcp dpt:http redir ports 80
-    4    REDIRECT   tcp  --  anywhere             anywhere             tcp dpt:mysql redir ports 3306
-
-    Chain INPUT (policy ACCEPT)
-    num  target     prot opt source               destination
-
-    Chain OUTPUT (policy ACCEPT)
-    num  target     prot opt source               destination
-
-    Chain POSTROUTING (policy ACCEPT)
-    num  target     prot opt source               destination
-sudo apt install iptables-persistent
-
-# Zabbix 빌드에 필요한 종속성 설치
-sudo apt-get install build-essential autoconf automake libtool
-
-# 필요한 서비스 재시작
-sudo systemctl restart zabbix-server mysql apache2
-
-# Zabbix 서버 빌드 프로세스
+# 14. build configure
 export CFLAGS="-std=gnu99"
 sudo ./configure --prefix=/home/zabbix/server --enable-server --enable-agent --with-mysql --enable-ipv6 --with-net-snmp --with-libcurl
-# 성공
+
+# 15. 아래 파일에서 LOG경로 수정, DBHost, DBPassword 수정
+sudo vim /etc/zabbix_server.conf
+
+# 16. 아래 파일에서 호스트 이름 지정, 서버 아이피 지정
+sudo vim /etc/zabbix_agentd.conf
+
+### configure 성공시
 config.status: executing depfiles commands
 
     Configuration:
@@ -231,19 +193,36 @@ config.status: executing depfiles commands
     *            Thank you for using Zabbix!                  *
     *              <http://www.zabbix.com>                    *
     ***********************************************************
-
+### 완료 후 Makefile 빌드
 sudo make install
 
-# Zabbix UI 파일을 Apache 디렉토리로 복사
+# 17. # Server, Agent 시작
+sudo zabbix_server
+sudo zabbix_agentd
+### 필요한 폴더 생성
+sudo mkdir /var/log/zabbix
+sudo chown -R zabbix:zabbix /var/log/zabbix
+#### 만약 안켜지면 아래 작업 수행
+sudo rm /tmp/zabbix_server_rtc.sock
+
+# 18. Server, Agent 재시작
+sudo zabbix_server
+sudo zabbix_agentd
+
+### 서버 확인
+sudo lsof -i :10050
+sudo lsof -i :10051
+
+# 19. Zabbix UI 파일을 Apache 디렉토리로 복사
 sudo mkdir /var/www/html/zabbix
 cd Desktop/workspace/monitoring /zabbix-6.4.10/ui/
 sudo cp -a . /var/www/html/zabbix/
+sudo systemctl start apache2
 
-# Zabbix 서버 및 웹 서버 재시작
-sudo systemctl restart zabbix-server mysql apache2
+----------- http://IP/zabbix 로 접속하면 설치 과정이 나옴 ----------
 
+# 20. front에서 설치 진행하면서 아래 파일 저장
 # 추가 PHP 확장 기능 설치
-sudo systemctl restart apache2
 sudo vim /var/www/html/zabbix/conf/zabbix.conf.php
     # Zabbix 서버 구성을 파일에 추가
     <?php
@@ -284,9 +263,12 @@ sudo vim /var/www/html/zabbix/conf/zabbix.conf.php
 
     // Uncomment and set to desired values to override Zabbix
 
-
-# Monitoring Error log
+# 21. Monitoring Error log
 sudo tail -f /var/log/zabbix/zabbix_server.log
+sudo tail -f /var/log/zabbix/zabbix_agentd.log
+
+# 22. 이제 오픈소스를 커스텀해가면서 코드를 만지고 할 수 있다.
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
