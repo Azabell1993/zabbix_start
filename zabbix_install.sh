@@ -122,7 +122,39 @@ quit;
 
 # 14. build configure
 export CFLAGS="-std=gnu99"
-sudo ./configure --prefix=/home/zabbix/server --enable-server --enable-agent --with-mysql --enable-ipv6 --with-net-snmp --with-libcurl
+sudo ./configure \
+  --enable-server \
+  --enable-agent \
+  --with-mysql \
+  --enable-ipv6 \
+  --with-net-snmp \
+  --with-libcurl \
+  --with-libxml2 \
+  --with-openipmi \
+  --enable-java \
+  --prefix=$PREFIX \
+  --with-openssl \
+  --with-libevent \
+  --with-libpcre \
+  --with-ldap \
+  --with-iconv \
+  --with-gettext \
+  --with-ssh2 \
+  --with-odbc \
+  --with-unixodbc \
+  --with-ipv6 \
+  --with-libiconv \
+  --with-openssl \
+  --with-libevent \
+  --with-jabber \
+  --with-openssl \
+  --with-libevent \
+  --with-ldap \
+  --with-iconv \
+  --with-gettext \
+  --with-ssh2 \
+  --with-odbc \
+  --with-unixodbc
 
 # 15. 아래 파일에서 LOG경로 수정, DBHost, DBPassword 수정
 sudo vim /etc/zabbix_server.conf
@@ -133,66 +165,68 @@ sudo vim /etc/zabbix_agentd.conf
 ### configure 성공시
 config.status: executing depfiles commands
 
-    Configuration:
 
-    Detected OS:           linux-gnu
-    Install path:          /home/zabbix/server
-    Compilation arch:      linux
+Configuration:
 
-    Compiler:              cc
-    Compiler flags:         -g -O2
+  Detected OS:           linux-gnu
+  Install path:          /home/zabbix/server
+  Compilation arch:      linux
 
-    Library-specific flags:
-        database:              -I/usr/include/mysql
-        Net-SNMP:               -I/usr/local/include -I/usr/lib/x86_64-linux-gnu/perl/5.30/CORE -I. -I/usr/include
+  Compiler:              cc
+  Compiler flags:         -g -O2
 
-    Enable server:         yes
-    Server details:
-        With database:         MySQL
-        WEB Monitoring:        cURL
-        SSL certificates:      /home/zabbix/server/share/zabbix/ssl/certs
-        SSL keys:              /home/zabbix/server/share/zabbix/ssl/keys
-        SNMP:                  yes
-        IPMI:                  no
-        SSH:                   no
-        TLS:                   no
-        ODBC:                  no
-        Linker flags:           -L/usr/lib/x86_64-linux-gnu   -L/usr/lib/x86_64-linux-gnu               -rdynamic
-        Libraries:              -lmysqlclient  -lpthread -ldl -lssl -lcrypto -lresolv -lm -lrt       -lnetsnmp    -lz -lpthread -levent -levent_pthreads    -lcurl -lpthread -lm -ldl  -lresolv  -lpcre
-        Configuration file:    /home/zabbix/server/etc/zabbix_server.conf
-        External scripts:      /home/zabbix/server/share/zabbix/externalscripts
-        Alert scripts:         /home/zabbix/server/share/zabbix/alertscripts
-        Modules:               /home/zabbix/server/lib/modules
+  Library-specific flags:
+    database:              -I/usr/include/mysql
+    Net-SNMP:               -I/usr/local/include -I/usr/lib/x86_64-linux-gnu/perl/5.34/CORE -I. -I/usr/include
 
-    Enable proxy:          no
+  Enable server:         yes
+  Server details:
+    With database:         MySQL
+    WEB Monitoring:        cURL
+      SSL certificates:      /home/zabbix/server/share/zabbix/ssl/certs
+      SSL keys:              /home/zabbix/server/share/zabbix/ssl/keys
+    SNMP:                  yes
+    IPMI:                  no
+    SSH:                   no
+    TLS:                   no
+    ODBC:                  no
+    Linker flags:           -L/usr/lib/x86_64-linux-gnu   -L/usr/lib/x86_64-linux-gnu               -rdynamic
+    Libraries:              -lmysqlclient  -lzstd -lssl -lcrypto -lresolv -lm       -lnetsnmp    -lz -lpthread -levent -levent_pthreads    -lcurl -lpthread -lm    -lpcre
+    Configuration file:    /home/zabbix/server/etc/zabbix_server.conf
+    External scripts:      /home/zabbix/server/share/zabbix/externalscripts
+    Alert scripts:         /home/zabbix/server/share/zabbix/alertscripts
+    Modules:               /home/zabbix/server/lib/modules
 
-    Enable agent:          yes
-    Agent details:
-        TLS:                   no
-        Modbus:                no
-        Linker flags:                -rdynamic
-        Libraries:              -lz -lpthread    -lcurl -lpthread -lm -ldl  -lresolv  -lpcre
-        Configuration file:    /home/zabbix/server/etc/zabbix_agentd.conf
-        Modules:               /home/zabbix/server/lib/modules
+  Enable proxy:          no
 
-    Enable agent 2:        no
+  Enable agent:          yes
+  Agent details:
+    TLS:                   no
+    Modbus:                no
+    Linker flags:                -rdynamic
+    Libraries:              -lz -lpthread    -lcurl -lpthread -lm    -lpcre
+    Configuration file:    /home/zabbix/server/etc/zabbix_agentd.conf
+    Modules:               /home/zabbix/server/lib/modules
 
-    Enable web service:    no
+  Enable agent 2:        no
 
-    Enable Java gateway:   no
+  Enable web service:    no
 
-    LDAP support:          no
-    IPv6 support:          yes
-    cmocka support:        no
+  Enable Java gateway:   no
 
-    yaml support:          no
+  LDAP support:          no
+  IPv6 support:          yes
+  cmocka support:        no
 
-    ***********************************************************
-    *            Now run 'make install'                       *
-    *                                                         *
-    *            Thank you for using Zabbix!                  *
-    *              <http://www.zabbix.com>                    *
-    ***********************************************************
+  yaml support:          no
+
+***********************************************************
+*            Now run 'make install'                       *
+*                                                         *
+*            Thank you for using Zabbix!                  *
+*              <https://www.zabbix.com>                   *
+***********************************************************
+
 ### 완료 후 Makefile 빌드
 sudo make install
 
