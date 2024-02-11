@@ -57,6 +57,7 @@ sudo apt-get install unixodbc-dev
 sudo apt-get install libssh2-1-dev
 sudo apt-get install libldap2-dev
 sudo apt-get install apache2
+sudo apt-get install libapache2-mod-php
 
 # 4. PHP 및 MySQL 버전 확인
 php --version
