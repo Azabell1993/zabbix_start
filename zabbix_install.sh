@@ -90,11 +90,12 @@ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
     mysqlx-bind-address     = 0.0.0.0
 
 # 10. 필수 설정 환경 설정 수정
-sudo vim /etc/php/8.1/cli/php.ini
-sudo vim /etc/php/8.1/apache2/php.ini
+sudo vim /etc/php/8.1/apache2/php.ini --> sudo apt-get install libapache2-mod-php 설치가 먼저 선행되어야함
    post_max_size = 16M
    max_execution_time = 300
    max_input_time = 300
+
+#sudo vim /etc/php/8.1/cli/php.ini (필요시)
 
 # 11. mysql에서 zabbix 계정 만들기
 sudo mysql -u root -p
