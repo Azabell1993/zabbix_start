@@ -55,6 +55,7 @@ sudo apt-get install php-ldap
 sudo apt-get install unixodbc
 sudo apt-get install unixodbc-dev
 sudo apt-get install libssh2-1-dev
+sudo apt-get install libldap2-dev
 
 # 4. PHP 및 MySQL 버전 확인
 php --version
