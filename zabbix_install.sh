@@ -161,11 +161,6 @@ sudo ./configure \
   --with-odbc \
   --with-unixodbc
 
-# 15. 아래 파일에서 LOG경로 수정, DBHost, DBPassword 수정
-sudo vim /etc/zabbix_server.conf
-
-# 16. 아래 파일에서 호스트 이름 지정, 서버 아이피 지정
-sudo vim /etc/zabbix_agentd.conf
 
 ### configure 성공시
 config.status: executing depfiles commands
@@ -234,6 +229,12 @@ Configuration:
 
 ### 완료 후 Makefile 빌드
 sudo make install
+
+# 15. 아래 파일에서 LOG경로 수정, DBHost, DBPassword 수정
+sudo vim /etc/zabbix_server.conf
+
+# 16. 아래 파일에서 호스트 이름 지정, 서버 아이피 지정
+sudo vim /etc/zabbix_agentd.conf
 
 # 17. # Server, Agent 시작
 sudo zabbix_server
