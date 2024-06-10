@@ -5,8 +5,6 @@ sudo apt update
 sudo hostnamectl set-hostname zabbixhost
 
 # 3. 필요한 패키지 설치
-cat << EOF > run.sh
-#!/bin/bash
 sudo apt-get install git
 sudo apt-get install vim
 sudo apt-get install curl
