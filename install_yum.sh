@@ -61,8 +61,8 @@ mysql --version
 
 # 5. Zabbix 소스 다운로드 및 압축 해제
 sudo wget https://cdn.zabbix.com/zabbix/sources/stable/7.0/zabbix-7.0.0.tar.gz
-tar -xvf zabbix-7.0.0beta1.tar.gz
-cd zabbix-7.0.0beta1/
+tar -xvf zabbix-7.0.0.tar.gz
+cd zabbix-7.0.0/
 
 # 6. group, user 추가
 sudo groupadd --system zabbix
